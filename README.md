@@ -64,3 +64,83 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Prueba tecnica
+Objetivo
+Desarrollar un dashboard interactivo que permite configurar los datos claves de un doctor.
+
+Entidades
+Se tiene las siguientes entidades disponibles
+
+Doctor (ID, Nombre completo, Teléfono, Ubicación, Especialidad, Servicios)
+Ubicación (ID, Titulo) (Ejemplo: Ciudad Guayana, San Felix, etc)
+Especialidad (ID, Titulo) (Ejemplo: Cardiologia, Dermatologia, etc)
+Servicios (ID, ID Especialidad, Título)(Ejemplo: Citología,Eco doppler, Eco pélvico)
+Pacientes (ID, Nombre completo, Teléfono)
+Citas (ID, Titulo, Fecha Cita, Hora Cita, Doctor, Paciente)
+
+
+Relaciones
+Se posee las siguientes relaciones:
+
+Un doctor posee una sola ubicación
+Una ubicación puede estar en varios doctores
+Un doctor posee una sola especialidad
+Una especialidad puede estar en múltiples doctores
+Una especialidad puede tener múltiples servicios
+Un servicio pertenece a una única especialidad
+Un doctor puede tener asociado múltiples servicios, con su precio único
+Una cita posee un solo doctor
+Una cita posee un solo paciente
+Un doctor puede tener una a muchas citas asociadas
+Un paciente puede tener una a muchas citas asociadas
+
+
+Descripcion del sistema
+Cuando un paciente realice una reserva de una cita esta queda pendiente por aprobar, el doctor es el encargado de aprobar o reagendar la cita.
+Los Doctores configuran en su perfil su ubicación, especialidad y servicios una vez que se registran, queda pendiente por verificar su perfil, el administrador es encargado de aprobar el perfil.
+
+Requisitos
+
+Funcionalidades
+
+Visualizar el listado de citas dentro del dashboard.
+Poder aprobar o reagendar las citas dentro del listado, o en los detalles de la cita.
+Configurar la ubicación, las especialidades y los servicios, con su precio personalizado.
+Incluir una función de exportación de datos en formato CSV para las citas.
+Diseñar una interfaz responsiva que se adapte a dispositivos móviles y de escritorio.
+
+
+Técnicos
+
+Utilizar PHP para el Backend, opcionalmente se permite el uso de Frameworks.
+Se permite cualquier framework de Frontend opcionalmente.
+Se permite el uso de plantillas para el desarrollo del dashboard
+Desarrollar  una API REST con JSON para los datos Backend.
+
+
+Extras (opcionales no obligatorias)
+
+Implementar autenticación de usuario (login y registro)
+Añadir la capacidad de personalizar el dashboard (arrastrar y soltar widgets).
+Integrar notificaciones en tiempo real.
+
+
+Entregables
+
+Código fuente en un repositorio Git (GitHub, GitLab, etc.).
+README con instrucciones de instalación y ejecución.
+Documentación breve sobre la arquitectura y decisiones de diseño.
+
+
+Criterios de Evaluación
+
+Calidad y limpieza del código.
+Buen diseño de interfaz y experiencia de usuario.
+Rendimiento y optimización.
+Manejo de errores y edge cases.
+
+
+Dia de entrega
+Lo que tenga hecho hasta el 04/12/2024 ANTES de las 11:00 AM
+¡Buena suerte!
