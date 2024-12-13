@@ -11,13 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
+        Schema::create('specialities', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->timestamps();
+        });
+        
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->unsignedBigInteger('speciality_id');
+            $table->foreign('speciality_id')->references('id')->on('specialities');
             $table->timestamps();
-            $table->string('full_name');
-            $table->string('phone');
-            $table->foreignId('speciality_id')->constrained();
-            $table->foreignId('location_id')->constrained();
         });
     }
 
