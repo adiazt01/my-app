@@ -14,6 +14,10 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->dateTime('appointment_at');
+            $table->string('title')->nullable();
+            $table->foreignId('patient_id')->constrained();
+            $table->foreignId('doctor_id')->constrained();
         });
     }
 

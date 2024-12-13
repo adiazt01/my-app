@@ -16,8 +16,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('full_name');
             $table->string('phone');
-            $table->foreginId('speciality_id')->constrained();
-            $table->foregeinId('location_id')->constrained();
+            $table->foreignId('speciality_id')->constrained();
+            $table->foreignId('location_id')->constrained();
         });
     }
 
